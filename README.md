@@ -18,3 +18,10 @@ let c = new ec.Calendar({
   }
 })
 ```
+
+## next
+
+- parse a bunch of existing tasks
+- verify whether tasks get updated on the calendar after edit, consider using [eventSources](https://github.com/vkurko/calendar?tab=readme-ov-file#eventsources)
+- start using it with +/-1y worth of loaded data
+- look at svelte options for making the task list dynamic
