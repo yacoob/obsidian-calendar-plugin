@@ -28,4 +28,6 @@
 		"tslib": "2.4.0",
 		"typescript": "4.7.4"
 	}
+    "install": "d=$(cat .plugin-dest-dir 2>/dev/null || echo './dist') && npm run build && mkdir -p ${d} && cp -f manifest.json main.js styles.css ${d}",
+    "clean": "rm -rf main.js styles.css dist"
 }
