@@ -12,6 +12,13 @@
 	"author": "",
 	"license": "MIT",
 	"devDependencies": {
+		"@event-calendar/core": "^3.12.0",
+		"@event-calendar/day-grid": "^3.12.0",
+		"@event-calendar/interaction": "^3.12.0",
+		"@event-calendar/list": "^3.12.0",
+		"@event-calendar/time-grid": "^3.12.0",
+		"@types/event-calendar__core": "^3.7.0",
+		"@types/event-calendar__time-grid": "^3.4.1",
 		"@types/node": "^16.11.6",
 		"@typescript-eslint/eslint-plugin": "5.29.0",
 		"@typescript-eslint/parser": "5.29.0",
