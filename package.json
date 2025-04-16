@@ -1,7 +1,7 @@
 {
-  "name": "obsidian-event-calendar-plugin",
+  "name": "obsidian-calendar-wrapper-plugin",
   "version": "0.0.1",
-  "description": "Wraps https://github.com/vkurko/calendar for use in dataview JS blocks",
+  "description": "Wraps https://fullcalendar.io for use in dataview JS blocks",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",

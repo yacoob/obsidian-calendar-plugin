@@ -1,10 +1,10 @@
 {
-	"id": "event-calendar",
-	"name": "Event Calendar Wrapper",
-	"version": "0.0.1",
-	"minAppVersion": "0.15.0",
-	"description": "Wraps https://github.com/vkurko/calendar for use in dataview JS blocks",
-	"author": "yacoob@ftml.net",
-	"authorUrl": "https://github.com/yacoob/obsidian-event-calendar-plugin",
-	"isDesktopOnly": false
+  "id": "calendar-wrapper",
+  "name": "Calendar Wrapper",
+  "version": "0.0.1",
+  "minAppVersion": "0.15.0",
+  "description": "Wraps https://fullcalendar.io for use in dataview JS blocks",
+  "author": "yacoob@ftml.net",
+  "authorUrl": "https://github.com/yacoob/obsidian-calendar-wrapper-plugin",
+  "isDesktopOnly": false
 }
