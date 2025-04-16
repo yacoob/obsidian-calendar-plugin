@@ -7,22 +7,13 @@
     "dev": "node esbuild.config.mjs",
     "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
     "version": "node version-bump.mjs && git add manifest.json versions.json",
-    "cp-plugin-files": "d=$(cat .plugin-dest-dir 2>/dev/null || echo './dist') && npm run build && mkdir -p ${d} && cp -f manifest.json main.js styles.css ${d}",
-    "clean": "rm -rf main.js styles.css dist"
+    "update-plugin-files": "d=$(cat .plugin-dest-dir 2>/dev/null || echo './dist') && npm run build && mkdir -p ${d} && cp -f manifest.json main.js ${d}",
+    "clean": "rm -rf main.js dist"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@event-calendar/core": "^3.12.0",
-    "@event-calendar/day-grid": "^3.12.0",
-    "@event-calendar/interaction": "^3.12.0",
-    "@event-calendar/list": "^3.12.0",
-    "@event-calendar/time-grid": "^3.12.0",
-    "@types/event-calendar__core": "^3.7.0",
-    "@types/event-calendar__day-grid": "^3.4.1",
-    "@types/event-calendar__list": "^3.4.1",
-    "@types/event-calendar__time-grid": "^3.4.1",
     "@types/node": "^16.11.6",
     "@typescript-eslint/eslint-plugin": "5.29.0",
     "@typescript-eslint/parser": "5.29.0",
@@ -31,5 +22,11 @@
     "obsidian": "latest",
     "tslib": "2.4.0",
     "typescript": "4.7.4"
+  },
+  "dependencies": {
+    "@fullcalendar/core": "^6.1.17",
+    "@fullcalendar/daygrid": "^6.1.17",
+    "@fullcalendar/list": "^6.1.17",
+    "@fullcalendar/timegrid": "^6.1.17"
   }
 }
