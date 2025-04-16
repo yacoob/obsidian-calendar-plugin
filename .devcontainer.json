@@ -1,0 +1,17 @@
+// vim: set filetype=jsonc :
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainer.base.schema.json",
+  "name": "devpod for obsidian calendar plugin",
+  // This image should include a preconfigured neovim.
+  "image": "ghcr.io/yacoob/interactive:devenv",
+  // Once the container is created:
+  // remove OS-provided npm
+  // install fnm
+  // install pnpm via fnm
+  // install project's dependencies via pnpm
+  "postCreateCommand": "sudo dnf5 remove -y nodejs-npm && (curl -o- https://fnm.vercel.app/install | bash) && export PATH=~/.local/share/fnm:$PATH && fnm install && eval \"$(fnm env)\" && npm install -g pnpm@latest-10 && pnpm install",
+  "runArgs": ["--userns=keep-id"],
+  "containerEnv": {
+    "DEVPOD_NVIM_ASTROCOMMUNITY": "typescript-all-in-one"
+  }
+}
