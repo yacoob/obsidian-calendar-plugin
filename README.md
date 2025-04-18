@@ -4,7 +4,8 @@ This is an exploratory plugin that wraps https://fullcalendar.io for usage in Ob
 
 ## next
 
-- parse a bunch of existing tasks
-- verify whether tasks get updated on the calendar after edit, consider using [eventSources](https://github.com/vkurko/calendar?tab=readme-ov-file#eventsources)
-- start using it with +/-1y worth of loaded data
-- look at svelte options for making the task list dynamic
+- use fullcalendar's [react component](https://fullcalendar.io/docs/react) with datacore to render the dummy calendar
+- use datacore's [api](https://github.com/blacksmithgu/datacore/blob/a4324f62b392db2e071c34f4c6b73abe3cf370f3/src/api/api.ts) from this plugin
+- convert a bunch of existing tasks for the current month out of a `dc.query` result
+- write an [event source](https://fullcalendar.io/docs/events-function) glue function for fullcalendar
+- start using it with the current dataset to assess the speed
