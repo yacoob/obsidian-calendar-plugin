@@ -6,23 +6,19 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 
 export default class CalendarWrapperPlugin extends Plugin {
-  public Calendar: any = null;
-  public AllPlugins: any = null;
+  public Calendar = Calendar;
+  public AllPlugins = [dayGridPlugin, timeGridPlugin, listPlugin];
 
   async onload() {
-    this.Calendar = Calendar;
-    this.AllPlugins = [dayGridPlugin, timeGridPlugin, listPlugin];
     console.log("...magical Calendar Wrapper powers activate!");
   }
 
   async onunload() {
-    this.Calendar = null;
-    this.AllPlugins = null;
     console.log("Calendar Wrapper plugin unloaded.");
   }
 
-  async dummyCalendar(calendarEl: HTMLElement) {
-    let c = new Calendar(calendarEl, {
+  public dummyCalendar(calendarEl: HTMLElement): void {
+    const c = new Calendar(calendarEl, {
       plugins: this.AllPlugins,
       initialView: 'dayGridMonth',
       height: 900,

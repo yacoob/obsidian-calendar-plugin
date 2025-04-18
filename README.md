@@ -4,7 +4,6 @@ This is an exploratory plugin that wraps https://fullcalendar.io for usage in Ob
 
 ## next
 
-- move to fullcalendar
 - parse a bunch of existing tasks
 - verify whether tasks get updated on the calendar after edit, consider using [eventSources](https://github.com/vkurko/calendar?tab=readme-ov-file#eventsources)
 - start using it with +/-1y worth of loaded data
