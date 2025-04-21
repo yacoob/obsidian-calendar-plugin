@@ -1,13 +1,17 @@
 import { Plugin } from "obsidian";
 
 import { Calendar } from '@fullcalendar/core';
+import FullCalendar from '@fullcalendar/react';
+import CalendarWrapper from 'wrapper';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 
 export default class CalendarWrapperPlugin extends Plugin {
   public Calendar = Calendar;
+  public ReactCalendar = FullCalendar;
   public AllPlugins = [dayGridPlugin, timeGridPlugin, listPlugin];
+  public CalendarWrapper = CalendarWrapper;
 
   async onload() {
     console.log("...magical Calendar Wrapper powers activate!");

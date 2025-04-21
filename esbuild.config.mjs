@@ -34,6 +34,10 @@ const context = await esbuild.context({
     "@lezer/lr",
     ...builtins,
   ],
+  alias: {
+    "react": "preact/compat",
+    "react-dom": "preact/compat"
+  },
   format: "cjs",
   target: "es2018",
   logLevel: "info",

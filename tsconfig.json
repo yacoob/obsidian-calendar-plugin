@@ -6,6 +6,12 @@
     "module": "ESNext",
     "target": "ES6",
     "allowJs": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "paths": {
+      "react": ["./node_modules/preact/compat/"],
+      "react-dom": ["./node_modules/preact/compat/"]
+    },
     "noImplicitAny": true,
     "moduleResolution": "node",
     "importHelpers": true,
@@ -19,6 +25,7 @@
     ]
   },
   "include": [
-    "**/*.ts"
+    "**/*.ts",
+    "**/*.tsx"
   ]
 }

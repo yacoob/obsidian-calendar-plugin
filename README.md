@@ -4,7 +4,6 @@ This is an exploratory plugin that wraps https://fullcalendar.io for usage in Ob
 
 ## next
 
-- use fullcalendar's [react component](https://fullcalendar.io/docs/react) with datacore to render the dummy calendar
 - use datacore's [api](https://github.com/blacksmithgu/datacore/blob/a4324f62b392db2e071c34f4c6b73abe3cf370f3/src/api/api.ts) from this plugin
 - convert a bunch of existing tasks for the current month out of a `dc.query` result
 - write an [event source](https://fullcalendar.io/docs/events-function) glue function for fullcalendar
