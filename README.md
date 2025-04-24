@@ -8,3 +8,7 @@ This is an exploratory plugin that wraps https://fullcalendar.io for usage in Ob
 - convert a bunch of existing tasks for the current month out of a `dc.query` result
 - write an [event source](https://fullcalendar.io/docs/events-function) glue function for fullcalendar
 - start using it with the current dataset to assess the speed
+
+## notes
+
+- I'll be using dataview for the moment; datacore lacks equivalents of `dv.paragraph()` and similar as of April 2025 which in turn strongly suggests constructing my own react component. I got it working, but I'm unsure as to [how brittle](https://github.com/blacksmithgu/datacore/issues/103) that ap
