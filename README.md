@@ -4,11 +4,11 @@ This is an exploratory plugin that wraps https://fullcalendar.io for usage in Ob
 
 ## next
 
-- use datacore's [api](https://github.com/blacksmithgu/datacore/blob/a4324f62b392db2e071c34f4c6b73abe3cf370f3/src/api/api.ts) from this plugin
-- convert a bunch of existing tasks for the current month out of a `dc.query` result
-- write an [event source](https://fullcalendar.io/docs/events-function) glue function for fullcalendar
-- start using it with the current dataset to assess the speed
+- finish basic calendar usable via dataviewjs block
+- register a custom view
+- render basic calendar in that view
+- start using it in the main vault to assess the speed
 
 ## notes
 
-- I'll be using dataview for the moment; datacore lacks equivalents of `dv.paragraph()` and similar as of April 2025 which in turn strongly suggests constructing my own react component. I got it working, but I'm unsure as to [how brittle](https://github.com/blacksmithgu/datacore/issues/103) that ap
+- datacore lacks equivalents of `dv.paragraph()` and similar as of April 2025 which in turn strongly suggests constructing my own react component. I got it working, but I'm unsure as to [how brittle](https://github.com/blacksmithgu/datacore/issues/103) that approach is
