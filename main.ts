@@ -1,22 +1,26 @@
 import { Plugin } from "obsidian";
 import { getAPI } from "obsidian-dataview";
-import type { SMarkdownPage, STask } from "obsidian-dataview/lib/data-model/serialized/markdown";
+import type {
+  SMarkdownPage,
+  STask,
+} from "obsidian-dataview/lib/data-model/serialized/markdown";
 import type { DateTime } from "luxon";
 import { Calendar } from "@fullcalendar/core";
-
-// Custom types for tasks with scheduled property
-type OptionalScheduledTask = STask & { scheduled?: DateTime };
-type ScheduledTask = STask & { scheduled: DateTime };
 
 import CalendarWrapper from "wrapper";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
+//
+// Custom types for tasks with scheduled property
+type OptionalScheduledTask = STask & { scheduled?: DateTime };
+type ScheduledTask = STask & { scheduled: DateTime };
+
 
 const allPlugins = [dayGridPlugin, timeGridPlugin, listPlugin];
 const validStatuses = [" ", "x", "*"];
 const dateRegex = /\/(2\d{3}-\d{2}-\d{2})\.md$/;
-
+const timeRegex = /^(\d{1,2}):(\d{2})\s+/;
 
 function calendarTasks(): Array<object> {
   const dv = getAPI();
@@ -29,17 +33,31 @@ function calendarTasks(): Array<object> {
     // add scheduled property for tasks in daily notes
     .map((t: STask) => {
       const match = t.path.match(dateRegex);
-      return match ? { ...t, scheduled: dv.luxon.DateTime.fromISO(match[1]) } : t;
+      return match
+        ? { ...t, scheduled: dv.luxon.DateTime.fromISO(match[1]) }
+        : t;
     })
-    .where((t: OptionalScheduledTask) => t.scheduled);
+    .where((t: OptionalScheduledTask) => t.scheduled)
+    // Add time information if present in the task text
+    .map((t: ScheduledTask) => {
+      // Check for time pattern at the beginning of the task text (HH:MM)
+      const match = t.text.match(timeRegex);
+      return match
+        ? {
+          ...t,
+          allDay: false,
+          scheduled: t.scheduled.set({ hour: match[1], minute: match[2] }),
+          text: t.text.replace(timeRegex, ''),
+        }
+        : t;
+    });
 
   // TODO: color depending on status (and maybe origin/type?)
-  // TODO: handle time if it's present
 
   // convert to objects for fullcalendar
   const calendarTasks = tasks.array().map((t: ScheduledTask) => {
     return {
-      allDay: true,
+      allDay: t.allDay,
       start: t.scheduled.toISO(),
       // strip everything past first emoji
       title: t.text.replace(/ [\p{Emoji}].*$/u, ""),
