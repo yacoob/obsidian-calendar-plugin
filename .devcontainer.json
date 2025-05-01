@@ -11,6 +11,12 @@
   // install project's dependencies via pnpm
   "postCreateCommand": "sudo dnf5 remove -y nodejs-npm && (curl -o- https://fnm.vercel.app/install | bash) && export PATH=~/.local/share/fnm:$PATH && fnm install && eval \"$(fnm env)\" && npm install -g pnpm@latest-10 && pnpm install",
   "runArgs": ["--userns=keep-id"],
+  "forwardPorts": [6000],
+  "portsAttributes": {
+    "6000": {
+      "label": "nvim"
+    }
+  },
   "containerEnv": {
     "DEVPOD_NVIM_ASTROCOMMUNITY": "typescript-all-in-one"
   }
