@@ -23,6 +23,12 @@ importers:
       '@fullcalendar/timegrid':
         specifier: ^6.1.17
         version: 6.1.17(@fullcalendar/core@6.1.17)
+      '@types/luxon':
+        specifier: ^3.6.2
+        version: 3.6.2
+      luxon:
+        specifier: ^3.6.1
+        version: 3.6.1
     devDependencies:
       '@eslint/js':
         specifier: ^9.25.1
@@ -317,6 +323,9 @@ packages:
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+
+  '@types/luxon@3.6.2':
+    resolution: {integrity: sha512-R/BdP7OxEMc44l2Ex5lSXHoIXTB2JLNa3y2QISIbr58U/YcsffyQrYW//hZSdrfxrjRZj3GcUoxMPGdO8gSYuw==}
 
   '@types/node@16.18.126':
     resolution: {integrity: sha512-OTcgaiwfGFBKacvfwuHzzn1KLxH/er8mluiy8/uM3sGXHaRe73RrSIj01jow9t4kJEW633Ov+cOexXeiApTyAw==}
@@ -1018,6 +1027,8 @@ snapshots:
   '@types/estree@1.0.7': {}
 
   '@types/json-schema@7.0.15': {}
+
+  '@types/luxon@3.6.2': {}
 
   '@types/node@16.18.126': {}
 
