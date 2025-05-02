@@ -82,6 +82,12 @@ function createCalendar(
       center: "title",
       right: "dayGridMonth,timeGridWeek,listWeek",
     },
+    eventTimeFormat: {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    },
+    displayEventTime: false
   });
   c.render();
 }
